@@ -9,6 +9,12 @@ import SwiftUI
 
 struct PizzaListView: View {
     
+    /*
+     var pizzaViewModel: PizzaViewModel = PizzaViewModel() -- can be used to just access and display the data
+     @State var pizzaViewModel: PizzaViewModel = PizzaViewModel() -- can be used to access and alter the data, should be use during very first declation
+     @Bindable var pizzaViewModel: PizzaViewModel -- for all the other subviews, Check usage of DetailedPizzaView
+     */
+    
     @State var pizzaViewModel: PizzaViewModel = PizzaViewModel()
     
     var body: some View {
