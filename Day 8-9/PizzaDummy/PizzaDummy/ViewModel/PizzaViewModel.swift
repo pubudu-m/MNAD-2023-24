@@ -43,4 +43,17 @@ import Observation
     func deleteItem(indexSet: IndexSet) {
         pizzaItems.remove(atOffsets: indexSet)
     }
+    
+    func addNewPizza(name: String, description: String, image: String, type: PizzaType, fastMovingStatus: Bool) {
+        let item = PizzaModel(name: name, description: description, image: image, type: type, isFastMoving: fastMovingStatus)
+        pizzaItems.append(item)
+    }
+    
+    func getFastMovingItems() -> [PizzaModel] {
+        return pizzaItems.filter { $0.isFastMoving == true }
+    }
+    
+    func getPizzaItems(type: PizzaType) -> [PizzaModel] {
+        return pizzaItems.filter { $0.type == type }
+    }
 }

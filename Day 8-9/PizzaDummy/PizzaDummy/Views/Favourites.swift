@@ -14,7 +14,21 @@ struct Favourites: View {
     var body: some View {
         NavigationStack {
             List {
-                
+                ForEach(pizzaViewModel.getFastMovingItems()) { pizza in
+                    NavigationLink {
+                        DetailedPizzaView(pizza: pizza)
+                    } label: {
+                        HStack {
+                            Image(pizza.image)
+                                .resizable()
+                                .frame(width: 120, height: 80)
+                                .scaledToFit()
+                                .cornerRadius(20)
+                            
+                            Text(pizza.name)
+                        }
+                    }
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Fast Moving Pizza's")
